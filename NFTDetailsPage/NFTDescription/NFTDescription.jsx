@@ -25,7 +25,7 @@ import Style from "./NFTDescription.module.css";
 import images from "../../img";
 import { Button } from "../../components/componentsindex.js";
 import { NFTTabs } from "../NFTDetailsIndex";
-
+const Maticprice = 1;
 //IMPORT SMART CONTRACT
 import { NFTMarketplaceContext } from "../../Context/NFTMarketplaceContext";
 
@@ -251,11 +251,11 @@ const NFTDescription = ({ nft }) => {
               >
                 <small>Current Bid</small>
                 <p>
-                  {nft.price} ETH <span>( ≈ $3,221.22)</span>
+                  {nft.price} MATIC 
                 </p>
               </div>
 
-              <span>[96 in stock]</span>
+              {/* <span>[96 in stock]</span> */}
             </div>
 
             <div className={Style.NFTDescription_box_profile_biding_box_button}>

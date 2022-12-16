@@ -87,7 +87,8 @@ const NavBar = () => {
       <div className={Style.navbar_container}>
         <div className={Style.navbar_container_left}>
           <div className={Style.logo}>
-            <DiJqueryLogo onClick={() => router.push("/")} />
+          <img src="https://chaincodeconsulting.com/_next/image?url=%2Fimages%2Flogo.png&w=1920&q=75" aline= "left" width="200" height="50" onClick={() => router.push("/")} />
+            {/* <a img onClick={() => router.push("/")} /> */}
           </div>
           <div className={Style.navbar_container_left_box_input}>
             <div className={Style.navbar_container_left_box_input_box}>

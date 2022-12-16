@@ -6,14 +6,13 @@ import axios from "axios";
 import { create as ipfsHttpClient } from "ipfs-http-client";
 
 // const client = ipfsHttpClient("https://ipfs.infura.io:5001/api/v0");
-
 const projectId = "2Eye3nJyIMvHFU85VL7264HmYO1"
 const projectSecretKey ="9d922e05c71e2fa4357205fcd85d8f75"
 const auth = `Basic ${Buffer.from(`${projectId}:${projectSecretKey}`).toString(
   "base64"
 )}`;
 
-const subdomain = "https://obortech.infura-ipfs.io";
+const subdomain = "https://ipfs.io";
 
 const client = ipfsHttpClient({
   host: "infura-ipfs.io",
@@ -45,12 +44,25 @@ const connectingWithSmartContract = async () => {
     const signer = provider.getSigner();
     const contract = fetchContract(signer);
     console.log("Connection with contract Done");
+
     return contract;
 
   } catch (error) {
     console.log("Something went wrong while connecting with contract");
   }
 };
+
+
+// const fetchnft = async() => {
+//   const web3Modal = new Wenb3Modal();
+//   const connection = await web3Modal.connect();
+//   const provider = new ethers.providers.Web3Provider(connection);
+//   const signer = provider.getSigner();
+//   const contract = fetchContract(signer);
+//   const nfts = contract.fetchItemsListed();
+//   console.log('nfts',nfts);
+//   return nfts
+// }
 
 
 export const NFTMarketplaceContext = React.createContext();
@@ -129,7 +141,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
     try {
       const added = await client.add(data);
 
-      const url = `https://infura-ipfs.io/ipfs/${added.path}`;
+      const url = `https://ipfs.io/ipfs/${added.path}`;
 
       await createSale(url, price);
       router.push("/searchPage");
@@ -168,11 +180,11 @@ export const NFTMarketplaceProvider = ({ children }) => {
 
   const fetchNFTs = async () => {
     try {
-      const provider = new ethers.providers.JsonRpcProvider();
-      const contract = fetchContract(provider);
-      
+      // const provider = new ethers.providers.JsonRpcProvider();
+      // const contract = fetchContract(provider);
+      const contract = await connectingWithSmartContract();
       const data = await contract.fetchMarketItems();
-      console.log(data);
+      console.log('Data with Provider',data);
 
       const items = await Promise.all(
         data.map(
@@ -200,9 +212,9 @@ export const NFTMarketplaceProvider = ({ children }) => {
           }
         )
       );
-          if(items.length == 0){
-            console.log("NO NFTS are There");
-          }
+          // if(items.length == 0){
+          //   console.log("NO NFTS are There");
+          // }
       console.log('items',items);
       return items;
     } catch (error) {
@@ -220,10 +232,10 @@ export const NFTMarketplaceProvider = ({ children }) => {
     try {
       const contract = await connectingWithSmartContract();
 
-      const data =
-        type == "fetchItemsListed"
-          ? await contract.fetchItemsListed()
-          : await contract.fetchMyNFTs();
+      const data = await contract.fetchMarketItems()
+        // type == "fetchItemsListed"
+        //   ? await contract.fetchItemsListed()
+        //   : await contract.fetchMyNFTs();
       console.log('data',data);
       const items = await Promise.all(
         data.map(

@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['obortech.infura-ipfs.io', 'infura-ipfs.io'],
+    domains: ['obortech.infura-ipfs.io', 'ipfs.io'],
   },
 };
 

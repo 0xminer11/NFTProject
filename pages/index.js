@@ -23,7 +23,7 @@ import {
 
 //IMPORTING CONTRCT DATA
 import { NFTMarketplaceContext } from "../Context/NFTMarketplaceContext";
-
+import {fetchMyNFTsOrListedNFTs} from "../Context/NFTMarketplaceContext";
 const Home = () => {
   const { checkIfWalletConnected } = useContext(NFTMarketplaceContext);
   useEffect(() => {
@@ -50,11 +50,11 @@ const Home = () => {
       <HeroSection />
       <Service />
       <BigNFTSilder />
-      <Title
+      {/* <Title
         heading="Audio Collection"
         paragraph="Discover the most outstanding NFTs in all topics of life."
       />
-      <AudioLive />
+      <AudioLive /> */}
       {/* {creators.length == 0 ? (
         <Loader />
       ) : (
@@ -68,7 +68,7 @@ const Home = () => {
         paragraph="Discover the most outstanding NFTs in all topics of life."
       />
       <Filter />
-      {/* {nfts.length == 0 ? <Loader /> : <NFTCard NFTData={nfts} />} */}
+      {nfts.length == 0 ? <Loader /> : <NFTCard NFTData={nfts} />}
 
       <Title
         heading="Browse by category"

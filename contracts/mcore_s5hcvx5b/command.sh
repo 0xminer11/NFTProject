@@ -1,0 +1,1 @@
+/usr/local/bin/manticore NFTMarketplace.sol

@@ -1,0 +1,4 @@
+cli:
+  argv:
+  - NFTMarketplace.sol
+  skip_reverts: true

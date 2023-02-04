@@ -1,0 +1,80 @@
+
+.container{
+ width: 80%;
+ height: 380px;
+ margin: 0 auto;
+ padding-bottom: 30px;
+ border-radius: 10px;
+ background-color: rgb(255, 255, 255);
+ overflow-y: scroll;
+}
+.main{
+ width: 100%;
+ margin: 0 auto;
+}
+.header{
+display: flex;
+align-items: center;
+gap: 10px;
+margin-left: 20px;
+}
+.logo{  
+width: 30px;
+height: 30px;
+color: rgba(35, 35, 101, 0.834);
+}
+.header h3{
+ color: #0E131F;
+}
+.titles{
+ display: flex;
+ justify-content: center;
+}
+
+.titles table {
+ text-align: center;
+ width: 100%;
+}
+.tahead{
+    position: sticky;
+    top:1px;
+ background-color:#0E131F;
+}
+.titles table tr{
+ text-align: center;
+ width: 100%;
+ height: 60px;
+ color: rgb(255, 255, 255);
+ border: solid 1px white;
+}
+
+.titles table tr td{
+ color: #0E131F;
+}
+/* .tbody{ */
+    /* height: 240px; */
+   /* overflow-y: scroll;  */
+/* background-color: #0837a3; */
+/* } */
+
+@media screen and (min-device-width: 320px) and (max-device-width: 425px) {
+ .container{
+ width: 90%;
+ }
+ .main{
+     grid-template-columns: 1fr;
+ }
+}
+
+@media screen and (min-device-width: 427px) and (max-device-width: 770px) {
+     .main{
+         grid-template-columns: repeat(2,1fr);
+ }
+}
+
+@media screen and (min-device-width: 772px) and (max-device-width: 1025px) {
+     .main{
+ grid-template-columns: repeat(3,1fr);
+ }
+}
+

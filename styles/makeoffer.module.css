@@ -1,0 +1,71 @@
+.container{
+    /* background-color: antiquewhite; */
+    margin: 0 auto;
+    width: 80%;
+}
+.container h1{
+    /* background-color: antiquewhite; */
+    text-align: center;
+    font-size: 35px;
+}
+.arrange{
+    /* background-color: aqua; */
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.main{
+    /* background-color: rgb(15, 18, 17); */
+    height: 400px;
+    width: 50%;
+    position: relative;
+    right:100px;
+}
+.main label{
+    position: relative;
+    top: 25px;
+    left:130px;
+    font-size: 20px;
+}
+.Form_box_input_userName{
+    display: block;
+    width: 60%;
+    height: 50px;
+    margin: 20px auto;
+    color: black;
+    border-radius: 40px;
+    text-align: center;
+    text-size-adjust: 25px;
+    
+}
+.reSellToken_box_btn{
+    text-align: center;
+    margin: 0 auto;
+}
+.Form_box_input_radio{
+    margin: 4px 40px 0 0;
+    height: 30px;
+    width: 20px;
+}
+
+.radio_btns{
+position: relative;
+top: 25px;
+right: -140px;
+width: 400px;
+/* background-color: antiquewhite; */
+}
+.reSellToken_box_btn{
+    position: relative;
+    top: 80px;
+}
+
+.time_durations{
+    display:flex;
+    position: relative;
+    left: 140px;
+    
+}
+.time_durations p{
+    margin: 20px 35px 0 0;
+}
